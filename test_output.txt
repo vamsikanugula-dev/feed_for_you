@@ -1,0 +1,35 @@
+﻿python : C:\Users\vamsi\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytest_asyncio\plugin.py:300: 
+PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+At line:1 char:341
++ ... _algorithm; python -m pytest tests/test_rss_and_ingest.py -v --tb=sho ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\vamsi\...cope" is unset.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+The event loop scope for asynchronous fixtures will default to the "fixture" caching scope. Future versions of 
+pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop 
+scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", 
+"class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts =============================
+platform win32 -- Python 3.12.2, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\vamsi\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\vamsi\Desktop\x_algorithm
+configfile: pyproject.toml
+plugins: anyio-4.15.1, asyncio-1.4.1.post1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 10 items
+
+tests/test_rss_and_ingest.py::TestRSSSource::test_parse_rss_feed PASSED  [ 10%]
+tests/test_rss_and_ingest.py::TestRSSSource::test_parse_atom_feed PASSED [ 20%]
+tests/test_rss_and_ingest.py::TestRSSSource::test_date_parsing PASSED    [ 30%]
+tests/test_rss_and_ingest.py::TestRSSSource::test_health_check PASSED    [ 40%]
+tests/test_rss_and_ingest.py::TestRSSSource::test_empty_fetch PASSED     [ 50%]
+tests/test_rss_and_ingest.py::TestIngestStore::test_ingest_articles PASSED [ 60%]
+tests/test_rss_and_ingest.py::TestIngestStore::test_duplicate_articles PASSED [ 70%]
+tests/test_rss_and_ingest.py::TestIngestStore::test_source_creation PASSED [ 80%]
+tests/test_rss_and_ingest.py::TestIngestStore::test_async_ingest_function PASSED [ 90%]
+tests/test_rss_and_ingest.py::TestIntegration::test_parse_and_ingest PASSED [100%]
+
+============================= 10 passed in 0.13s ==============================

@@ -6,6 +6,7 @@ Build a For You style tech-news feed for about 100 users, inspired by X's open-s
 ## Done (with evidence)
 - Claude Code runs on GLM 5 via LiteLLM on Bedrock (/context shows CLAUDE.md and PROGRESS.md loaded)
 - Project skeleton created (news_feed/ with sources, hydrators, filters, scorers, selectors - tests/test_imports.py passes)
+- Stage 2 (ingest) implemented: migrations/001_init.sql (SQLite schema), news_feed/sources/rss_source.py (RSS/Atom parsing), news_feed/ingest.py (IngestStore), config/feeds.yaml (5 feeds) - tests/test_rss_and_ingest.py passes (10 tests)
 
 ## In progress
 - (none)
@@ -15,14 +16,12 @@ Build a For You style tech-news feed for about 100 users, inspired by X's open-s
 - Ingest articles in the background, rank from our own database
 - GLM 5 for large tasks, GLM 4.7 Flash (haiku tier) for small tasks
 - Link out to articles and store only titles, snippets and our own summaries
+- Sources to start: Hacker News API plus RSS feeds
+- Embeddings: local bge-small (384 dims), added in a later stage
 
 ## Failed approaches (do NOT retry)
 - (none yet)
 
 ## Next step
-- Decide on news sources and embedding model (answer open questions)
-
-## Open questions
-- Which news sources to start with?
-- Which embedding model: local bge-small or an API
+- Build stage 3 (hydrate): fetch article content and extract summary
 -

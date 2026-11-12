@@ -1,0 +1,23 @@
+# RSS feeds for tech news ingestion
+# Add your own feeds below
+
+feeds:
+  - name: "Hacker News Front Page"
+    url: "https://hnrss.org/frontpage"
+    quality: 0.8
+
+  - name: "TechCrunch"
+    url: "https://techcrunch.com/feed/"
+    quality: 0.7
+
+  - name: "The Verge"
+    url: "https://www.theverge.com/rss/index.xml"
+    quality: 0.7
+
+  - name: "Ars Technica"
+    url: "https://feeds.arstechnica.com/arstechnica/index"
+    quality: 0.75
+
+  - name: "Wired"
+    url: "https://www.wired.com/feed/rss"
+    quality: 0.7

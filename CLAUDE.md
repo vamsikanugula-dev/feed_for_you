@@ -60,3 +60,6 @@ Update PROGRESS.md so someone with no memory of this conversation could continue
 
 When compacting, always preserve: the goal verbatim, the Done, Failed approaches and Next step sections of PROGRESS.md, file paths changed, commit hashes, unresolved errors with exact messages, and decisions with reasons.
 
+- Be concise. Do not print whole files back to me. Show only changed lines.
+- Read only the files needed for the current subtask. Do not explore the repo.
+- Send long test or command output to a file (e.g. test_output.txt) and show me only the last 15 lines.
