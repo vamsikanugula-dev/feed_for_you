@@ -7,6 +7,7 @@ Build a For You style tech-news feed for about 100 users, inspired by X's open-s
 - Claude Code runs on GLM 5 via LiteLLM on Bedrock (/context shows CLAUDE.md and PROGRESS.md loaded)
 - Project skeleton created (news_feed/ with sources, hydrators, filters, scorers, selectors - tests/test_imports.py passes)
 - Stage 2 (ingest) implemented: migrations/001_init.sql (SQLite schema), news_feed/sources/rss_source.py (RSS/Atom parsing), news_feed/ingest.py (IngestStore), config/feeds.yaml (5 feeds) - tests/test_rss_and_ingest.py passes (10 tests)
+- Stage 3 (hydrate + filters) implemented: news_feed/hydrators/summary_hydrator.py (HTML summary extraction), news_feed/filters/age_filter.py (48-hour default), news_feed/filters/seen_filter.py (user-seen tracking), news_feed/filters/duplicate_filter.py (batch-level URL dedup) - tests/test_hydrate_and_filter.py passes (20 tests)
 
 ## In progress
 - (none)
@@ -23,5 +24,5 @@ Build a For You style tech-news feed for about 100 users, inspired by X's open-s
 - (none yet)
 
 ## Next step
-- Build stage 3 (hydrate): fetch article content and extract summary
+- Build stage 4 (score): implement relevance scoring for articles
 -
