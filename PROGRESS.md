@@ -1,7 +1,7 @@
 # PROGRESS
 
 ## Goal (verbatim)
-Build a For You style tech-news feed for about 100 users, inspired by X's open-source For You pipeline: ingest -> hydrate -> filter -> score -> diversify -> blend. See DESIGN.md for the stage list.
+Build a For You style tech-news feed for about 100 users, inspired by X's open-source For You pipeline: ingest -> hydrate -> filter -> score -> diversify -> blend. See DESIGN.md for the stage li
 
 ## Done (with evidence)
 - Claude Code runs on GLM 5 via LiteLLM on Bedrock (/context shows CLAUDE.md and PROGRESS.md loaded)
