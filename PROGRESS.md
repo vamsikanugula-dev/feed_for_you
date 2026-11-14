@@ -8,6 +8,7 @@ Build a For You style tech-news feed for about 100 users, inspired by X's open-s
 - Project skeleton created (news_feed/ with sources, hydrators, filters, scorers, selectors - tests/test_imports.py passes)
 - Stage 2 (ingest) implemented: migrations/001_init.sql (SQLite schema), news_feed/sources/rss_source.py (RSS/Atom parsing), news_feed/ingest.py (IngestStore), config/feeds.yaml (5 feeds) - tests/test_rss_and_ingest.py passes (10 tests)
 - Stage 3 (hydrate + filters) implemented: news_feed/hydrators/summary_hydrator.py (HTML summary extraction), news_feed/filters/age_filter.py (48-hour default), news_feed/filters/seen_filter.py (user-seen tracking), news_feed/filters/duplicate_filter.py (batch-level URL dedup) - tests/test_hydrate_and_filter.py passes (20 tests)
+- Stage 4 (score + select) implemented: config/scoring.yaml (weights), news_feed/scorers/weighted_scorer.py (weighted relevance scoring), news_feed/selectors/top_k_selector.py (top K selection) - tests/test_scoring_and_selection.py passes (13 tests)
 
 ## In progress
 - (none)
@@ -19,10 +20,12 @@ Build a For You style tech-news feed for about 100 users, inspired by X's open-s
 - Link out to articles and store only titles, snippets and our own summaries
 - Sources to start: Hacker News API plus RSS feeds
 - Embeddings: local bge-small (384 dims), added in a later stage
+- Duplicate filter only dedupes by URL; story-level clustering deferred until embeddings exist
+- Storage is SQLite for now; Postgres/pgvector comes later
 
 ## Failed approaches (do NOT retry)
 - (none yet)
 
 ## Next step
-- Build stage 4 (score): implement relevance scoring for articles
+- Build stage 5 (diversity): implement MMR reorder + decaying penalty for repeated sources
 -

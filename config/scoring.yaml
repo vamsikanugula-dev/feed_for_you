@@ -1,0 +1,19 @@
+# Scoring weights for article ranking
+# score = w1*relevance + w2*freshness + w3*source_quality + w4*popularity + w5*cluster_size - penalties
+
+weights:
+  relevance: 0.35
+  freshness: 0.25
+  source_quality: 0.20
+  popularity: 0.15
+  cluster_size: 0.05
+
+penalties:
+  repeat_source: 0.1  # penalty for repeated source in a batch
+
+selection:
+  top_k: 20  # default number of articles to select
+
+# Freshness decay parameters
+freshness:
+  half_life_hours: 24  # article scores halve every 24 hours
